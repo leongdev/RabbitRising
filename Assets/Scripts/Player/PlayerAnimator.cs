@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     [Header("Animation Settings")]
-    public float animationIndex = 1;
     public float sensorThreshold;
 
     Animator animator;
@@ -27,8 +26,6 @@ public class PlayerAnimator : MonoBehaviour
     /// </summary>
     public void OnPlayerAnimate()
     {
-        animator.SetFloat("PlayerState", animationIndex);
-
         if (collisionChecker.leftSlider || collisionChecker.rightSlider)
         {
             WallHandler();
@@ -65,22 +62,22 @@ public class PlayerAnimator : MonoBehaviour
 
         if (dashLocker)
         {
-            animationIndex = 4;
+            PlayAnimation(PlayerAnimationConstants.PLAYER_DASH_HASH);
         }
         else if (dashDownLocker)
         {
-            animationIndex = 5;
+            PlayAnimation(PlayerAnimationConstants.PLAYER_FALL_DASH_HASH);
         }
         else{
             //Falling
             if (playerRB.velocity.y < -sensorThreshold)
             {
-                animationIndex = 3;
+                PlayAnimation(PlayerAnimationConstants.PLAYER_FALL_DASH_HASH);
             }
             // Rising Up
             else if (playerRB.velocity.y > sensorThreshold)
             {
-                animationIndex = 2;
+                PlayAnimation(PlayerAnimationConstants.PLAYER_JUMP_HASH);
             }
         }
     }
@@ -90,7 +87,7 @@ public class PlayerAnimator : MonoBehaviour
     /// </summary>
     void GroundHandler()
     {
-        animationIndex = 1;
+        PlayAnimation(PlayerAnimationConstants.PLAYER_RUN_HASH);
     }
 
     /// <summary>
@@ -98,6 +95,14 @@ public class PlayerAnimator : MonoBehaviour
     /// </summary>
     void WallHandler()
     {
-        animationIndex = 7;
+        PlayAnimation(PlayerAnimationConstants.PLAYER_WALL_SLIDE_HASH);
+    }
+
+    /// <summary>
+    /// This method handles the play animation
+    /// </summary>
+    private void PlayAnimation(int animationHash)
+    {
+        animator.Play(animationHash);
     }
 }

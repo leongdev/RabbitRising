@@ -69,10 +69,6 @@ public class PlayerDash : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="direction"></param>
     void DashDirection(Vector2 direction)
     {
         StartDash();
