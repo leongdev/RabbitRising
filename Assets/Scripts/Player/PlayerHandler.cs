@@ -21,6 +21,7 @@ public class PlayerHandler : MonoBehaviour
     [SerializeField] PlayerDash dash;
     [SerializeField] PlayerAnimator animate;
     [Header("Other Settings")]
+    public PinObject cameraTarget;
     public Rigidbody2D playerRB;
     public Animator playerAnimController;
     public SpriteRenderer playerSpriteRenderer;
