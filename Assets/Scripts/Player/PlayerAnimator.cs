@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    [Header("Animation Settings")]
-    public float sensorThreshold;
 
+    // Local
     Animator animator;
     Rigidbody2D playerRB;
     PlayerCollisionChecker collisionChecker;
+    PlayerAttributes attributes;
 
     bool dashLocker = false;
     bool dashDownLocker = false;
 
     private void Awake()
     {
+        attributes = this.GetComponent<PlayerHandler>().attributes;
         animator = this.GetComponent<PlayerHandler>().playerAnimController;
         playerRB = this.GetComponent<PlayerHandler>().playerRB;
         collisionChecker = this.GetComponent<PlayerCollisionChecker>();
@@ -70,12 +71,12 @@ public class PlayerAnimator : MonoBehaviour
         }
         else{
             //Falling
-            if (playerRB.velocity.y < -sensorThreshold)
+            if (playerRB.velocity.y < -attributes.sensorThreshold)
             {
                 PlayAnimation(PlayerAnimationConstants.PLAYER_FALL_DASH_HASH);
             }
             // Rising Up
-            else if (playerRB.velocity.y > sensorThreshold)
+            else if (playerRB.velocity.y > attributes.sensorThreshold)
             {
                 PlayAnimation(PlayerAnimationConstants.PLAYER_JUMP_HASH);
             }

@@ -5,25 +5,23 @@ using UnityEngine.Events;
 
 public class PlayerDash : MonoBehaviour
 {
-    [Header("Dash Settings")]
-    [SerializeField] float dashSpeed;
-    [SerializeField] float dashCooldown;
-    [Header("Debuggers")]
-    [SerializeField] float localCounter = 0;
-    [SerializeField] bool startCount;
-    [Header("Setup Events")]
     [SerializeField] UnityEvent onDashStart;
     [SerializeField] UnityEvent onDashEnd;
+
+    // Local
+    PlayerCollisionChecker collision;
+    Rigidbody2D playerRB;
+    PlayerAttributes attributes;
 
     bool moveDirection;
     bool cameFromSky= false;
     bool dashedDown = false;
-
-    PlayerCollisionChecker collision;
-    Rigidbody2D playerRB;
+    float localCounter = 0;
+    bool startCount;
 
     private void Awake()
     {
+        attributes = this.GetComponent<PlayerHandler>().attributes;
         playerRB = this.GetComponent<PlayerHandler>().playerRB;
     }
 
@@ -59,7 +57,7 @@ public class PlayerDash : MonoBehaviour
         {
             localCounter += Time.deltaTime;
 
-            if(localCounter > dashCooldown)
+            if(localCounter > attributes.dashCooldown)
             {
                 EndDash();
             }else if (collision.bottom && !cameFromSky)
@@ -73,7 +71,7 @@ public class PlayerDash : MonoBehaviour
     {
         StartDash();
         playerRB.velocity = Vector2.zero;
-        playerRB.velocity += direction * dashSpeed;
+        playerRB.velocity += direction * attributes.dashSpeed;
     }
 
     /// <summary>

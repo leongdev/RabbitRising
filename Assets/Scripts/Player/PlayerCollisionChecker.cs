@@ -4,30 +4,25 @@ using UnityEngine;
 
 public class PlayerCollisionChecker : MonoBehaviour
 {
-    [Header("Collider Settings ")]
-    [SerializeField] LayerMask groundLayer;
-    [SerializeField] LayerMask wallSliderLayer;
-    [SerializeField] float colliderRadius;
-    [SerializeField] Vector2 leftCircleOffset;
-    [SerializeField] Vector2 rightCircleOffset; 
-    [SerializeField] Vector2 bottomCircleOffset;
 
-    [Header("Collision Variables")]
+    [HideInInspector]
     public bool left;
+    [HideInInspector]
     public bool right;
+    [HideInInspector]
     public bool bottom;
+    [HideInInspector]
     public bool leftSlider;
+    [HideInInspector]
     public bool rightSlider;
-    [Header("Collision Debuggers")]
-    [SerializeField] bool canDebugColliders;
-    [SerializeField] Color leftColor;
-    [SerializeField] Color rightColor;
-    [SerializeField] Color bottomColor;
 
+    // Local
     Rigidbody2D playerRB;
+    PlayerAttributes attributes;
 
     private void Awake()
     {
+        attributes = this.GetComponent<PlayerHandler>().attributes;
         playerRB = this.GetComponent<PlayerHandler>().playerRB;
     }
 
@@ -43,7 +38,7 @@ public class PlayerCollisionChecker : MonoBehaviour
     void PlayerColliders()
     {
         // LEFT
-        if (Check2DCollition(GetOverlapPosition(leftCircleOffset, playerRB.transform), colliderRadius, groundLayer))
+        if (Check2DCollition(GetOverlapPosition(new Vector2(attributes.leftCircleOffsetX, attributes.leftCircleOffsetY), playerRB.transform), attributes.colliderRadius, attributes.groundLayer))
         {
             left = true;
         }
@@ -53,7 +48,7 @@ public class PlayerCollisionChecker : MonoBehaviour
         }
 
         // RIGHT
-        if (Check2DCollition(GetOverlapPosition(rightCircleOffset, playerRB.transform), colliderRadius, groundLayer))
+        if (Check2DCollition(GetOverlapPosition( new Vector2(attributes.rightCircleOffsetX, attributes.rightCircleOffsetY), playerRB.transform), attributes.colliderRadius, attributes.groundLayer))
         {
             right = true;
         }
@@ -63,7 +58,7 @@ public class PlayerCollisionChecker : MonoBehaviour
         }
 
         // LEFT SLIDER
-        if (Check2DCollition(GetOverlapPosition(leftCircleOffset, playerRB.transform), colliderRadius, wallSliderLayer))
+        if (Check2DCollition(GetOverlapPosition(new Vector2(attributes.leftCircleOffsetX, attributes.leftCircleOffsetY), playerRB.transform), attributes.colliderRadius, attributes.wallSliderLayer))
         {
             leftSlider = true;
         }
@@ -73,7 +68,7 @@ public class PlayerCollisionChecker : MonoBehaviour
         }
 
         // RIGHT SLIDER  
-        if (Check2DCollition(GetOverlapPosition(rightCircleOffset, playerRB.transform), colliderRadius, wallSliderLayer))
+        if (Check2DCollition(GetOverlapPosition(new Vector2(attributes.rightCircleOffsetX, attributes.rightCircleOffsetY), playerRB.transform), attributes.colliderRadius, attributes.wallSliderLayer))
         {
             rightSlider = true;
         }
@@ -83,7 +78,7 @@ public class PlayerCollisionChecker : MonoBehaviour
         }
 
         //BOTTOM
-        if (Check2DCollition(GetOverlapPosition(bottomCircleOffset, playerRB.transform), colliderRadius, groundLayer))
+        if (Check2DCollition(GetOverlapPosition(new Vector2(attributes.bottomCircleOffsetX, attributes.bottomCircleOffsetY), playerRB.transform), attributes.colliderRadius, attributes.groundLayer))
         {
             bottom = true;
         }
@@ -119,17 +114,17 @@ public class PlayerCollisionChecker : MonoBehaviour
 
     public void OnDrawGizmos() 
     {
-        if (canDebugColliders)
+        if (attributes) 
         {
-            Gizmos.color = leftColor;
+            Gizmos.color = attributes.leftColor;
             //LEFT
-            Gizmos.DrawWireSphere(GetOverlapPosition(leftCircleOffset, this.transform.GetChild(0).transform), colliderRadius);
-            Gizmos.color = rightColor;
+            Gizmos.DrawWireSphere(GetOverlapPosition(new Vector2(attributes.leftCircleOffsetX, attributes.leftCircleOffsetY), this.transform.GetChild(0).transform), attributes.colliderRadius);
+            Gizmos.color = attributes.rightColor;
             //RIGHT
-            Gizmos.DrawWireSphere(GetOverlapPosition(rightCircleOffset, this.transform.GetChild(0).transform), colliderRadius);
-            Gizmos.color = bottomColor;
+            Gizmos.DrawWireSphere(GetOverlapPosition(new Vector2(attributes.rightCircleOffsetX, attributes.rightCircleOffsetY), this.transform.GetChild(0).transform), attributes.colliderRadius);
+            Gizmos.color = attributes.bottomColor;
             //BOTTOM
-            Gizmos.DrawWireSphere(GetOverlapPosition(bottomCircleOffset, this.transform.GetChild(0).transform), colliderRadius);
+            Gizmos.DrawWireSphere(GetOverlapPosition(new Vector2(attributes.bottomCircleOffsetX, attributes.bottomCircleOffsetY), this.transform.GetChild(0).transform), attributes.colliderRadius);
         }
     }
 }

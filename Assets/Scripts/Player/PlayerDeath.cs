@@ -5,18 +5,22 @@ using UnityEngine.Events;
 
 public class PlayerDeath : MonoBehaviour
 {
-    [Header("Die Settings")]
-    [SerializeField] float dieCodown = 0;
-
-    [Header("Die Events")]
     public UnityEvent onDieStart;
     public UnityEvent onDieEnd;
 
+    // Local
+    PlayerAttributes attributes;
     float dieCounter = 0;
 
+    // Static
     static bool isDying = false;
     static bool triggerDie = false;
     static bool dieLocker = true;
+
+    private void Awake()
+    {
+        attributes = this.GetComponent<PlayerHandler>().attributes;
+    }
 
     private void Start()
     {
@@ -32,7 +36,7 @@ public class PlayerDeath : MonoBehaviour
         {
             dieCounter += Time.deltaTime;
 
-            if (dieCounter > dieCodown)
+            if (dieCounter > attributes.afterDieCounter)
             {
                 onDieEnd.Invoke();
                 isDying = false;

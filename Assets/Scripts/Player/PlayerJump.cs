@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-    [Header("Jump Settings")]
-    [SerializeField] float jumpForce;
-    [Range(0, 30)]
-    [SerializeField] float fallMultiplier = 2.5f;
-    [Range(0, 30)]
-    [SerializeField] float lowJumpMultiplier = 2f;
-
+    // Local
     Rigidbody2D playerRB;
+    PlayerAttributes attributes;
 
     private void Awake()
     {
+        attributes = this.GetComponent<PlayerHandler>().attributes;
         playerRB = this.GetComponent<PlayerHandler>().playerRB;
     }
 
@@ -38,7 +34,7 @@ public class PlayerJump : MonoBehaviour
     public void Jump()
     {
         playerRB.velocity = new Vector2(playerRB.velocity.x, 0);
-        playerRB.velocity += Vector2.up * jumpForce;
+        playerRB.velocity += Vector2.up * attributes.jumpForce;
     }
 
     /// <summary>
@@ -47,7 +43,7 @@ public class PlayerJump : MonoBehaviour
     public void JumpDirection(Vector2 direction)
     {
         playerRB.velocity = Vector2.zero;
-        playerRB.velocity += direction * jumpForce;
+        playerRB.velocity += direction * attributes.jumpForce;
     }
 
     /// <summary>
@@ -57,11 +53,11 @@ public class PlayerJump : MonoBehaviour
     {
         if (playerRB.velocity.y > 0)
         {
-            playerRB.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            playerRB.velocity += Vector2.up * Physics2D.gravity.y * (attributes.fallMultiplier - 1) * Time.deltaTime;
         }
         else if (playerRB.velocity.y < 0)
         {
-            playerRB.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier + 1) * Time.deltaTime;
+            playerRB.velocity += Vector2.up * Physics2D.gravity.y * (attributes.lowJumpMultiplier + 1) * Time.deltaTime;
         }
     }
 }

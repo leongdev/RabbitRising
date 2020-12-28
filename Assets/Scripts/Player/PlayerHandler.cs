@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerMove))]
+[RequireComponent(typeof(PlayerJump))]
+[RequireComponent(typeof(PlayerCollisionChecker))]
+[RequireComponent(typeof(PlayerWallSlide))]
+[RequireComponent(typeof(PlayerDash))]
+[RequireComponent(typeof(PlayerAnimator))]
 public class PlayerHandler : MonoBehaviour
 {
-    [Header("Player Settings")]
+    [Header("PLAYER DEBUG STATES")]
     [SerializeField] bool canDash;
     [SerializeField] bool canMove;
     [SerializeField] bool canJump;
@@ -13,18 +19,26 @@ public class PlayerHandler : MonoBehaviour
     [SerializeField] bool canCheckCollisions;
     [SerializeField] bool canUpdateDirection;
     [Space]
-    [Header("Setup Scripts")]
-    [SerializeField] PlayerMove move;
-    [SerializeField] PlayerJump jump;
-    [SerializeField] PlayerCollisionChecker collisions;
-    [SerializeField] PlayerWallSlide wallSlide;
-    [SerializeField] PlayerDash dash;
-    [SerializeField] PlayerAnimator animate;
-    [Header("Other Settings")]
+  
+    [Header("PLAYER FILES")]
     public PinObject cameraTarget;
     public Rigidbody2D playerRB;
     public Animator playerAnimController;
     public SpriteRenderer playerSpriteRenderer;
+    public PlayerAttributes attributes;
+
+    // Local
+    PlayerMove move;
+    PlayerJump jump;
+    PlayerCollisionChecker collisions;
+    PlayerWallSlide wallSlide;
+    PlayerDash dash;
+    PlayerAnimator animate;
+
+    private void Awake()
+    {
+        SetupVariables();
+    }
 
     // Update is called once per frame
     void Update()
@@ -36,6 +50,19 @@ public class PlayerHandler : MonoBehaviour
         if (canAnimate) animate.OnPlayerAnimate();
         if (canDash) dash.OnDash();
         if (canSlide) wallSlide.OnWallSlide();
+    }
+
+    /// <summary>
+    /// This method setups the local variables
+    /// </summary>
+    void SetupVariables() 
+    {
+        move = GetComponent<PlayerMove>();
+        jump = GetComponent<PlayerJump>();
+        collisions = GetComponent<PlayerCollisionChecker>();
+        wallSlide = GetComponent<PlayerWallSlide>();
+        dash = GetComponent<PlayerDash>();
+        animate = GetComponent<PlayerAnimator>();
     }
 
     /// <summary>

@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [Header("Move Settings")]
-    [SerializeField] float moveSpeed;
     public bool moveDirection = true;
 
+    // Local
+    PlayerAttributes attributes;
     Rigidbody2D playerRB;
     SpriteRenderer playerSprite;
     PlayerCollisionChecker collisionChecker;
 
     private void Awake()
     {
+        attributes = this.GetComponent<PlayerHandler>().attributes;
         playerRB = this.GetComponent<PlayerHandler>().playerRB;
         playerSprite = this.GetComponent<PlayerHandler>().playerSpriteRenderer;
         collisionChecker = this.GetComponent<PlayerCollisionChecker>();
@@ -38,7 +39,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (collisionChecker.bottom)
         {
-            playerRB.velocity = new Vector2(direction.x * moveSpeed,playerRB.velocity.y);
+            playerRB.velocity = new Vector2(direction.x * attributes.moveSpeed, playerRB.velocity.y);
         }
     }
 }

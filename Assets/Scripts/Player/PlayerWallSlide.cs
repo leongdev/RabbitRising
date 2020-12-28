@@ -5,29 +5,22 @@ using UnityEngine.Events;
 
 public class PlayerWallSlide : MonoBehaviour
 {
-    [Header("Wall Slider Settings")]
-    [SerializeField] float wallSlideSpeed;
-    [Range(0,2)]
-    [SerializeField] float xWallJumpForce;
-    [Range(0, 2)]
-    [SerializeField] float yWallJumpForce;
-    [Header("Wall Jump Settings")]
-    [SerializeField] float jumpWallCooldown;
     [SerializeField] UnityEvent onJumpWallEnd;
-    [Header("Debuggers")]
-    [SerializeField] float localCounter = 0;
-    [SerializeField] bool startCount = false;
 
+    // Local
+    PlayerAttributes attributes;
     Rigidbody2D playerRB;
     PlayerCollisionChecker collisionChecker;
     PlayerMove move;
     PlayerJump jump;
-
+    float localCounter = 0;
+    bool startCount = false;
     bool cameFromSlide = false;
     bool blockDownForce = false;
 
     private void Awake()
     {
+        attributes = this.GetComponent<PlayerHandler>().attributes;
         playerRB = this.GetComponent<PlayerHandler>().playerRB;
         collisionChecker = this.GetComponent<PlayerCollisionChecker>();
         move = this.GetComponent<PlayerMove>();
@@ -44,7 +37,7 @@ public class PlayerWallSlide : MonoBehaviour
         {
             localCounter += Time.deltaTime;
 
-            if (localCounter > jumpWallCooldown)
+            if (localCounter > attributes.jumpWallCooldown)
             {
                 localCounter = 0;
                 startCount = false;
@@ -55,7 +48,7 @@ public class PlayerWallSlide : MonoBehaviour
         if (collisionChecker.leftSlider && !blockDownForce || collisionChecker.rightSlider && !blockDownForce)
         {
             cameFromSlide = true;
-            playerRB.velocity = new Vector2(0, -wallSlideSpeed);
+            playerRB.velocity = new Vector2(0, -attributes.wallSlideSpeed);
         }
         else if(collisionChecker.bottom)
         {
@@ -66,11 +59,12 @@ public class PlayerWallSlide : MonoBehaviour
 
         if (InputSystem.jump && cameFromSlide)
         {
+            Debug.Log("PASSOU");
             localCounter = 0;
             startCount = true;
             blockDownForce = true;
             cameFromSlide = false;
-            jump.JumpDirection(new Vector2(move.moveDirection ? -1 * xWallJumpForce : 1 * xWallJumpForce, 1 * yWallJumpForce));
+            jump.JumpDirection(new Vector2(move.moveDirection ? -1 * attributes.xWallJumpForce : 1 * attributes.xWallJumpForce, 1 * attributes.yWallJumpForce));
             move.moveDirection = !move.moveDirection;
         }
     }
