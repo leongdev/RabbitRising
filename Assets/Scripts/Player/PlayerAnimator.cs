@@ -30,6 +30,8 @@ public class PlayerAnimator : MonoBehaviour
         if (collisionChecker.leftSlider || collisionChecker.rightSlider)
         {
             WallHandler();
+            dashLocker = false;
+            dashDownLocker = false;
         }
         else
         {

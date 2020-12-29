@@ -47,6 +47,9 @@ public class PlayerWallSlide : MonoBehaviour
 
         if (collisionChecker.leftSlider && !blockDownForce || collisionChecker.rightSlider && !blockDownForce)
         {
+            if (collisionChecker.leftSlider) move.moveDirection = false;
+            else if (collisionChecker.rightSlider) move.moveDirection = true;
+
             cameFromSlide = true;
             playerRB.velocity = new Vector2(0, -attributes.wallSlideSpeed);
         }
@@ -59,7 +62,6 @@ public class PlayerWallSlide : MonoBehaviour
 
         if (InputSystem.jump && cameFromSlide)
         {
-            Debug.Log("PASSOU");
             localCounter = 0;
             startCount = true;
             blockDownForce = true;
