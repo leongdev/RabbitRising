@@ -37,6 +37,7 @@ public class PlayerHandler : MonoBehaviour
 
     private void Awake()
     {
+        transform.GetChild(0).gameObject.SetActive(true);
         SetupVariables();
     }
 
