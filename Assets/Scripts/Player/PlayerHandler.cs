@@ -21,7 +21,7 @@ public class PlayerHandler : MonoBehaviour
     [Space]
   
     [Header("PLAYER FILES")]
-    public PinObject cameraTarget;
+    public UtilsPinObject cameraTarget;
     public Rigidbody2D playerRB;
     public Animator playerAnimController;
     public SpriteRenderer playerSpriteRenderer;

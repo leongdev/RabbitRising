@@ -5,8 +5,6 @@ using UnityEngine.Events;
 
 public class PlayerWallSlide : MonoBehaviour
 {
-    [SerializeField] UnityEvent onJumpWallEnd;
-
     // Local
     PlayerAttributes attributes;
     Rigidbody2D playerRB;
@@ -41,7 +39,7 @@ public class PlayerWallSlide : MonoBehaviour
             {
                 localCounter = 0;
                 startCount = false;
-                onJumpWallEnd.Invoke();
+                SetBlockDownForce(false);
             }
         }
 

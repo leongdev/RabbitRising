@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 public class PlayerDeath : MonoBehaviour
 {
-    public UnityEvent onDieStart;
-    public UnityEvent onDieEnd;
-
     // Local
     PlayerAttributes attributes;
     float dieCounter = 0;
@@ -38,25 +36,29 @@ public class PlayerDeath : MonoBehaviour
 
             if (dieCounter > attributes.afterDieCounter)
             {
-                onDieEnd.Invoke();
-                isDying = false;
+                OnPlayerDieEnd();
             }
         }
 
         if (triggerDie)
         {
             triggerDie = false;
-            OnPlayerDie();
+            OnPlayerDieStart();
         }
     }
 
     /// <summary>
     /// This is the Die update
     /// </summary>
-    public void OnPlayerDie()
+    public void OnPlayerDieStart()
     {
-        isDying = true;
-        onDieStart.Invoke();
+        //isDying = true;
+        SceneManager.LoadScene(0);
+    }
+
+    public void OnPlayerDieEnd()
+    {
+        isDying = false;
     }
 
     /// <summary>

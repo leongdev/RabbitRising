@@ -90,7 +90,7 @@ MonoBehaviour:
   canAnimate: 1
   canCheckCollisions: 1
   canUpdateDirection: 1
-  cameraTarget: {fileID: 4343846139867047491}
+  cameraTarget: {fileID: 0}
   playerRB: {fileID: 4343846140680186093}
   playerAnimController: {fileID: 4343846140697997076}
   playerSpriteRenderer: {fileID: 4343846140697997075}
@@ -242,7 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4343846139867047492}
-  - component: {fileID: 4343846139867047491}
+  - component: {fileID: 7749384747062258573}
   m_Layer: 0
   m_Name: Camera Target
   m_TagString: Untagged
@@ -264,7 +264,7 @@ Transform:
   m_Father: {fileID: 4343846139183937378}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4343846139867047491
+--- !u!114 &7749384747062258573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4343846139867047493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5d2ffa33f771d41b5909e48385de21, type: 3}
+  m_Script: {fileID: 11500000, guid: 3724f561a5721fd40a55a9e5eeac80e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canPinObject: 1
