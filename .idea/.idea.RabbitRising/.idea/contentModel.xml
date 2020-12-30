@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\leon_\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\leon_\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_RabbitRising.-708656206.00" t="ExcludeRecursive" />
+    <e p="C:\Users\leon_\Documents\GameProjects\RabbitRising" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="Aseprite Toolbox" t="Include">
+            <e p="Script" t="Include">
+              <e p="Editor" t="Include">
+                <e p="AseData.cs" t="Include" />
+                <e p="AsepritePostprocessor.cs" t="Include" />
+                <e p="Core" t="Include">
+                  <e p="Core_Ase.cs" t="Include" />
+                  <e p="Core_File.cs" t="Include" />
+                  <e p="Core_Misc.cs" t="Include" />
+                </e>
+                <e p="FileRecorder.cs" t="Include" />
+                <e p="Misc.cs" t="Include" />
+                <e p="RectPaking.cs" t="Include" />
+                <e p="Saving.cs" t="Include" />
+                <e p="Util.cs" t="Include" />
+                <e p="Window" t="Include">
+                  <e p="AsepriteToolbox_Saving.cs" t="Include" />
+                  <e p="AsepriteToolbox_Task.cs" t="Include" />
+                  <e p="AsepriteToolbox_Window.cs" t="Include" />
+                  <e p="MoenenEditorWindow.cs" t="Include" />
+                </e>
+                <e p="Zlib" t="Include">
+                  <e p="ZlibUtil.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Enhanced Hierarchy" t="Include">
+            <e p="Editor" t="Include">
+              <e p="After.cs" t="Include" />
+              <e p="Disposables.cs" t="Include" />
+              <e p="EnhancedHierarchy.asmdef" t="Include" />
+              <e p="EnhancedHierarchy.cs" t="Include" />
+              <e p="Enumerations.cs" t="Include" />
+              <e p="HierarchyInfo.cs" t="Include" />
+              <e p="Icons" t="Include">
+                <e p="Active.cs" t="Include" />
+                <e p="GameObjectIcon.cs" t="Include" />
+                <e p="IconBase.cs" t="Include" />
+                <e p="IconData.cs" t="Include" />
+                <e p="IconList.cs" t="Include" />
+                <e p="Layer.cs" t="Include" />
+                <e p="Lock.cs" t="Include" />
+                <e p="Memory.cs" t="Include" />
+                <e p="MonoBehaviourIcon.cs" t="Include" />
+                <e p="None.cs" t="Include" />
+                <e p="PrefabApply.cs" t="Include" />
+                <e p="RendererToggle.cs" t="Include" />
+                <e p="SoundIcon.cs" t="Include" />
+                <e p="Static.cs" t="Include" />
+                <e p="Tag.cs" t="Include" />
+                <e p="Warnings.cs" t="Include" />
+              </e>
+              <e p="LogEntry.cs" t="Include" />
+              <e p="MiniLabels" t="Include">
+                <e p="LayerMiniLabel.cs" t="Include" />
+                <e p="MiniLabelProvider.cs" t="Include" />
+                <e p="SortingLayerMiniLabel.cs" t="Include" />
+                <e p="TagMiniLabel.cs" t="Include" />
+              </e>
+              <e p="Preferences.cs" t="Include" />
+              <e p="PreferencesGUI.cs" t="Include" />
+              <e p="PrefItem.cs" t="Include" />
+              <e p="ProfilerSample.cs" t="Include" />
+              <e p="Reflected.cs" t="Include" />
+              <e p="ReflectionHelper.cs" t="Include" />
+              <e p="Styles.cs" t="Include" />
+              <e p="Utility.cs" t="Include" />
+            </e>
+          </e>
+          <e p="PowerSpriteAnimator" t="Include">
+            <e p="Demo" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Attachments.cs" t="Include" />
+                <e p="ExampleCharacter.cs" t="Include" />
+                <e p="ExampleEffect.cs" t="Include" />
+                <e p="PlayRandomAnim.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Editor" t="Include">
+                <e p="SpriteAnimator.cs" t="Include" />
+                <e p="SpriteAnimatorInfoPanel.cs" t="Include" />
+                <e p="SpriteAnimatorNodes.cs" t="Include" />
+                <e p="SpriteAnimatorTimeline.cs" t="Include" />
+              </e>
+              <e p="SpriteAnim.cs" t="Include" />
+              <e p="SpriteAnimEventHandler.cs" t="Include" />
+              <e p="SpriteAnimNodes.cs" t="Include" />
+            </e>
+          </e>
+          <e p="RainbowAssets" t="Include">
+            <e p="!Core" t="Include">
+              <e p="NOTICES.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Platforms" t="Include">
+            <e p="JumpingPlatform.cs" t="Include" />
+            <e p="PlatformMovingWall.cs" t="Include" />
+            <e p="PlatformSelfDestructive.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
+            <e p="PlayerAnimator.cs" t="Include" />
+            <e p="PlayerAttributes.cs" t="Include" />
+            <e p="PlayerCollisionChecker.cs" t="Include" />
+            <e p="PlayerDash.cs" t="Include" />
+            <e p="PlayerDeath.cs" t="Include" />
+            <e p="PlayerHandler.cs" t="Include" />
+            <e p="PlayerJump.cs" t="Include" />
+            <e p="PlayerMove.cs" t="Include" />
+            <e p="PlayerReference.cs" t="Include" />
+            <e p="PlayerWallSlide.cs" t="Include" />
+          </e>
+          <e p="Systems" t="Include">
+            <e p="CameraSystem.cs" t="Include" />
+            <e p="FPSSystem.cs" t="Include" />
+            <e p="GameSystem.cs" t="Include" />
+            <e p="InputSystem.cs" t="Include" />
+            <e p="TimerSystem.cs" t="Include" />
+          </e>
+          <e p="Traps" t="Include">
+            <e p="SpikeAutomaticHandler.cs" t="Include" />
+            <e p="SpikeCollider.cs" t="Include" />
+          </e>
+          <e p="Utils" t="Include">
+            <e p="UtilsAutoTimer.cs" t="Include" />
+            <e p="UtilsPinObject.cs" t="Include" />
+            <e p="UtilsTimer.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="EnhancedHierarchyEditor.csproj" t="IncludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="RabbitRising.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

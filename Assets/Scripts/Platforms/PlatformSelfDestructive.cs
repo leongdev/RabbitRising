@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(UtilsTimer))]
-public class SelfDestructivePlatformHandler : MonoBehaviour
+public class PlatformSelfDestructive : MonoBehaviour
 {
     [SerializeField] SelfDestructivePlatformAttributes attributes;
     [SerializeField] Animator platformAnimator;
@@ -33,7 +33,7 @@ public class SelfDestructivePlatformHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(canFirePlatform && collision.CompareTag("Player"))
+        if (canFirePlatform && collision.CompareTag("Player"))
         {
             OnPlayerTriggerPlatform();
         }

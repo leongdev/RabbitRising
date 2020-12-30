@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5646774737524309883}
   - component: {fileID: 5646774737524309876}
-  - component: {fileID: 5646774737524309877}
+  - component: {fileID: 5006723966046593756}
   - component: {fileID: 5646774737524309882}
   m_Layer: 0
   m_Name: SelfDestructivePlatformGround
@@ -49,7 +49,7 @@ MonoBehaviour:
   onTimerFinish:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5646774737524309877
+--- !u!114 &5006723966046593756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5646774737524309880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2835350e79b99f74599692bcd6edb600, type: 3}
+  m_Script: {fileID: 11500000, guid: eeb7b8e01d084ef4ca2f681d3789e8bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: c6b53b68e3f60564a8691428469784a2, type: 2}
