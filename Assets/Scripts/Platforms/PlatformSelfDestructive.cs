@@ -28,7 +28,7 @@ public class PlatformSelfDestructive : MonoBehaviour
 
     void SelfDestroy()
     {
-        GameObject.Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

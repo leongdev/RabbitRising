@@ -161,20 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8134b1796ec13416ca8c1cbad9a175f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onJumpWallEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4343846139526692640}
-        m_MethodName: SetBlockDownForce
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4343846139526692641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,34 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac97f8c043884c3ab8b4634330d3c2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDashStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4343846139526692669}
-        m_MethodName: SetMove
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDashEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4343846139526692669}
-        m_MethodName: SetMove
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &4343846139526692645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,12 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700ad0c132559423eb03179831d8f52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDieStart:
-    m_PersistentCalls:
-      m_Calls: []
-  onDieEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &4343846139867047493
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4343846140680186095}
-  - component: {fileID: 4343846140680186092}
+  - component: {fileID: 2409925037599839415}
   - component: {fileID: 4343846140680186093}
   - component: {fileID: 4343846140680186094}
   m_Layer: 0
@@ -312,7 +264,7 @@ Transform:
   m_Father: {fileID: 4343846139183937378}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4343846140680186092
+--- !u!114 &2409925037599839415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,10 +273,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4343846140680186000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b745b773945ad46da80ba182b81de65d, type: 3}
+  m_Script: {fileID: 11500000, guid: cef5550dea968c04ebe6fb0714f9c55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRoot: {fileID: 4343846139526692647}
+  referenceObject: {fileID: 4343846139526692647}
 --- !u!50 &4343846140680186093
 Rigidbody2D:
   serializedVersion: 4

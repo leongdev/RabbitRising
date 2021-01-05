@@ -47,6 +47,15 @@ public class PlayerJump : MonoBehaviour
     }
 
     /// <summary>
+    /// This method can jump direction
+    /// </summary>
+    public void JumpDirectionWithForce(Vector2 direction , float jumpForce)
+    {
+        playerRB.velocity = Vector2.zero;
+        playerRB.velocity += direction * jumpForce;
+    }
+
+    /// <summary>
     /// This method brings a better fell to the Jump
     /// </summary>
     void PlayerJumpPrettier()

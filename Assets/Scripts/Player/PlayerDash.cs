@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class PlayerDash : MonoBehaviour
 {
     // Local
-    PlayerHandler player;
     PlayerCollisionChecker collision;
     Rigidbody2D playerRB;
     PlayerAttributes attributes;
@@ -19,7 +18,6 @@ public class PlayerDash : MonoBehaviour
 
     private void Awake()
     {
-        player = this.GetComponent<PlayerHandler>();
         attributes = this.GetComponent<PlayerHandler>().attributes;
         playerRB = this.GetComponent<PlayerHandler>().playerRB;
     }
@@ -81,7 +79,7 @@ public class PlayerDash : MonoBehaviour
         cameFromSky = collision.bottom;
         localCounter = 0;
         startCount = true;
-        player.SetMove(false);
+        PlayerHandler._canMove = false;
     }
 
     /// <summary>
@@ -90,6 +88,6 @@ public class PlayerDash : MonoBehaviour
     void EndDash()
     {
         startCount = false;
-        player.SetMove(true);
+        PlayerHandler._canMove = true;
     }
 }

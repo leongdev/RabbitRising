@@ -35,8 +35,12 @@ public class PlayerHandler : MonoBehaviour
     PlayerDash dash;
     PlayerAnimator animate;
 
+    // Static
+    public static bool _canMove;
+
     private void Awake()
     {
+        _canMove = canMove;
         transform.GetChild(0).gameObject.SetActive(true);
         SetupVariables();
     }
@@ -44,7 +48,7 @@ public class PlayerHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove) move.OnPlayerMove(move.moveDirection);
+        if (_canMove) move.OnPlayerMove(move.moveDirection);
         if (canJump) jump.OnPlayerJump(collisions.bottom, collisions.leftSlider, collisions.rightSlider);
         if (canCheckCollisions) collisions.OnCheckCollisions();
         if (canUpdateDirection) Direction();
@@ -80,14 +84,5 @@ public class PlayerHandler : MonoBehaviour
         {
             move.moveDirection = true;
         }
-    }
-
-    /// <summary>
-    /// This method can change the movement state
-    /// </summary>
-    /// <param name="state">Movement State</param>
-    public void SetMove(bool state)
-    {
-        canMove = state;
     }
 }
