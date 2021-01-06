@@ -11,6 +11,7 @@ public class CameraSystem : MonoBehaviour
     [SerializeField] private bool canUseBounds;
 
     [Header("[SETUP OBJECTS]")]
+    [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform defaultSlider;
     [SerializeField] private Transform defaultPivot;
     [SerializeField] private Transform defaultTarget;
@@ -48,6 +49,8 @@ public class CameraSystem : MonoBehaviour
     {
         if (defaultTarget) SetTarget(defaultTarget);
         if (defaultSlider) initialPosition = defaultSlider;
+        
+        mainCamera.transform.position = new Vector3(0,0,-10);
     }
 
     void FixedUpdate()
