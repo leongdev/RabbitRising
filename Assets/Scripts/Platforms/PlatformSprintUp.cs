@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class PlatformSprintUp : MonoBehaviour
 {
-    [SerializeField] float jumpForce;
-    [SerializeField] float cooldownTime;
-    [SerializeField] Animator animator;
-    [SerializeField] UtilsTimer timer;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float cooldownTime;
+    [SerializeField] private Animator animator;
+    [SerializeField] private UtilsTimer timer;
 
     // Local
-    bool canFire = true;
+    private bool canFire = true;
 
     private void Awake() {
         timer.onTimerFinish.AddListener(FireCooldown);    
+    }
+
+    private void OnDestroy() {
+        timer.onTimerFinish.RemoveAllListeners();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -26,7 +30,7 @@ public class PlatformSprintUp : MonoBehaviour
         }
     }
 
-    void FireSprint(GameObject player) {
+    private void FireSprint(GameObject player) {
         Vector2 _direction = Vector2.up;
         player.GetComponent<PlayerJump>().JumpDirectionWithForce(_direction, jumpForce);
 
@@ -38,7 +42,7 @@ public class PlatformSprintUp : MonoBehaviour
         timer.StartTimer(cooldownTime);
     }
 
-    void FireCooldown() {
+    private void FireCooldown() {
         canFire = true;
         animator.Play(SprintUpPlatformAnimationConstants.PLATFORM_IDLE_HASH);
     }

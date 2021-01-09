@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\leon_\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\leon_\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_RabbitRising.-708656206.00" t="ExcludeRecursive" />
+    <e p="C:\Users\leon_\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\leon_\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_RabbitRising.-708656206.00" t="ExcludeRecursive" />
     <e p="C:\Users\leon_\Documents\GameProjects\RabbitRising" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -108,9 +108,9 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Platforms" t="Include">
-            <e p="JumpingPlatform.cs" t="Include" />
             <e p="PlatformMovingWall.cs" t="Include" />
             <e p="PlatformSelfDestructive.cs" t="Include" />
+            <e p="PlatformSprintUp.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="PlayerAnimator.cs" t="Include" />
@@ -121,7 +121,6 @@
             <e p="PlayerHandler.cs" t="Include" />
             <e p="PlayerJump.cs" t="Include" />
             <e p="PlayerMove.cs" t="Include" />
-            <e p="PlayerReference.cs" t="Include" />
             <e p="PlayerWallSlide.cs" t="Include" />
           </e>
           <e p="Systems" t="Include">
@@ -129,6 +128,8 @@
             <e p="FPSSystem.cs" t="Include" />
             <e p="GameSystem.cs" t="Include" />
             <e p="InputSystem.cs" t="Include" />
+            <e p="SceneManagerSystem.cs" t="Include" />
+            <e p="TimeDisplaySystem.cs" t="Include" />
             <e p="TimerSystem.cs" t="Include" />
           </e>
           <e p="Traps" t="Include">
@@ -137,6 +138,7 @@
           </e>
           <e p="Utils" t="Include">
             <e p="UtilsAutoTimer.cs" t="Include" />
+            <e p="UtilsObjectReference.cs" t="Include" />
             <e p="UtilsPinObject.cs" t="Include" />
             <e p="UtilsTimer.cs" t="Include" />
           </e>

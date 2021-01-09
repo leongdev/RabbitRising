@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(UtilsTimer))]
 public class PlatformSelfDestructive : MonoBehaviour
 {
-    [SerializeField] SelfDestructivePlatformAttributes attributes;
-    [SerializeField] Animator platformAnimator;
+    [SerializeField] private float startTimer;
+    [SerializeField] private Animator platformAnimator;
 
     // Local
     UtilsTimer timer;
@@ -22,8 +22,14 @@ public class PlatformSelfDestructive : MonoBehaviour
         canFirePlatform = false;
         timer.onTimerFinish.RemoveListener(SelfDestroy);
         timer.onTimerFinish.AddListener(SelfDestroy);
-        timer.StartTimer(attributes.startTimer);
+        timer.StartTimer(startTimer);
         platformAnimator.Play(SelfDestructivePlatformAnimationConstants.PLATFORM_BLINK_HASH);
+    }
+
+    private void OnDestroy() 
+    {
+        timer.onTimerFinish.RemoveListener(SelfDestroy);
+        timer.onTimerFinish.RemoveListener(SelfDestroy);
     }
 
     void SelfDestroy()
@@ -44,11 +50,4 @@ public static class SelfDestructivePlatformAnimationConstants
 {
     private const string PLATFORM_BLINK = "self_destructable_platform_blink";
     public static readonly int PLATFORM_BLINK_HASH = Animator.StringToHash(PLATFORM_BLINK);
-}
-
-[CreateAssetMenu(fileName = "SelfDestructivePlatformAttributes", menuName = "LeonGDev/SelfDestructivePlatformAttributes", order = 1)]
-public class SelfDestructivePlatformAttributes : ScriptableObject
-{
-    [Header("PLATFORM SETTINGS")]
-    public float startTimer;
 }
