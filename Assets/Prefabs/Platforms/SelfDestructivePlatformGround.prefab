@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb7b8e01d084ef4ca2f681d3789e8bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: {fileID: 11400000, guid: c6b53b68e3f60564a8691428469784a2, type: 2}
+  startTimer: 1
   platformAnimator: {fileID: 5646774737812181695}
 --- !u!61 &5646774737524309882
 BoxCollider2D:

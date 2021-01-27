@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(UtilsTimer))]
 public class SpikeAutomaticHandler : MonoBehaviour
 {
+    [SerializeField] float stayOnTimer;
+    [SerializeField] float startTimer;
     [SerializeField] Animator spikeAnimator;
     [SerializeField] Animator spikePlatformAnimator;
-    [SerializeField] SpikeAutomaticAttributes attributes;
 
     // Local
     UtilsTimer timer;
@@ -23,7 +24,7 @@ public class SpikeAutomaticHandler : MonoBehaviour
     {
         timer.onTimerFinish.RemoveListener(OnPlatformBlinkEnd);
         timer.onTimerFinish.AddListener(OnSpikeEnd);
-        timer.StartTimer(attributes.stayOnTimer);
+        timer.StartTimer(stayOnTimer);
 
         spikePlatformAnimator.Play(AutomaticSpikePlatformAnimationConstants.SPIKE_IDLE_HASH);
         spikeAnimator.Play(AutomaticSpikeAnimationConstants.SPIKE_UP_HASH);
@@ -39,7 +40,7 @@ public class SpikeAutomaticHandler : MonoBehaviour
     {
         timer.onTimerFinish.RemoveListener(OnSpikeEnd);
         timer.onTimerFinish.AddListener(OnPlatformBlinkEnd);
-        timer.StartTimer(attributes.startTimer);
+        timer.StartTimer(startTimer);
 
         spikePlatformAnimator.Play(AutomaticSpikePlatformAnimationConstants.SPIKE_BLINK_HASH);
         canTriggerTrap = false;
