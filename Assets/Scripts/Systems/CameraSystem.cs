@@ -9,9 +9,10 @@ public class CameraSystem : MonoBehaviour
     [SerializeField] private bool canShake;
     [SerializeField] private bool canDebugShake;
     [SerializeField] private bool canUseBounds;
+    [SerializeField] private bool canRescaleCamera;
 
     [Header("[SETUP OBJECTS]")]
-    [SerializeField] private Transform mainCamera;
+    [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform defaultSlider;
     [SerializeField] private Transform defaultPivot;
     [SerializeField] private Transform defaultTarget;
@@ -26,9 +27,9 @@ public class CameraSystem : MonoBehaviour
 
     [Header("[SHAKE CAMERA SETTINGS]")]
     [Range(0, 1)]
-    [SerializeField] float shakePower;
+    [SerializeField] private float shakePower;
     [Range(0, 1)]
-    [SerializeField] float shakeDuration;
+    [SerializeField] private float shakeDuration;
 
     [Header("[BOUND SETTINGS]")]
     [SerializeField] private Vector2 minCameraPos;
@@ -49,18 +50,25 @@ public class CameraSystem : MonoBehaviour
     {
         if (defaultTarget) SetTarget(defaultTarget);
         if (defaultSlider) initialPosition = defaultSlider;
-        
-        mainCamera.transform.position = new Vector3(0,0,-10);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (canFollowTarget) FollowTarget();
         if (canUseBounds) SetBounds();
         if (canShake) CameraShake();
+        if (canRescaleCamera) RescaleCamera();
+    }
+    
+    private void RescaleCamera()
+    {
+        Vector3 camPos = mainCamera.transform.position;
+        float defaultWidth = mainCamera.orthographicSize * mainCamera.aspect;
+        float defaultHeight = mainCamera.orthographicSize;
+        mainCamera.orthographicSize = defaultWidth / mainCamera.aspect;
     }
 
-    void CameraShake() 
+    private void CameraShake() 
     {
         if (shakeTimer >= 0)
         {
@@ -77,10 +85,8 @@ public class CameraSystem : MonoBehaviour
             shakeLogicKey = false;
         }
 
-        if (canDebugShake)
-        {
-            if (Input.GetKeyDown(KeyCode.P)) ShakeCameraCustom(shakePower, shakeDuration);
-        }
+        if (!canDebugShake) return;
+        if (Input.GetKeyDown(KeyCode.P)) ShakeCameraCustom(shakePower, shakeDuration);
     }
 
     /// <summary>

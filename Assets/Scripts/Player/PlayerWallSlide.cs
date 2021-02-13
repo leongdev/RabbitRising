@@ -58,7 +58,7 @@ public class PlayerWallSlide : MonoBehaviour
             cameFromSlide = false;
         } 
 
-        if (InputSystem.jump && cameFromSlide)
+        if (InputSystem.Jump && cameFromSlide)
         {
             localCounter = 0;
             startCount = true;

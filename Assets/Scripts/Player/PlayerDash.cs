@@ -31,13 +31,13 @@ public class PlayerDash : MonoBehaviour
         moveDirection = this.GetComponent<PlayerMove>().moveDirection;
 
         // Dash Ground and Air
-        if (InputSystem.dash && !collision.leftSlider && !collision.rightSlider)
+        if (InputSystem.Dash && !collision.leftSlider && !collision.rightSlider)
         {
             DashDirection(new Vector2(moveDirection ? 1 : -1 ,0));
         }
 
         // Dash to Down
-        if (InputSystem.jump && !collision.bottom && !collision.leftSlider && !collision.rightSlider)
+        if (InputSystem.Jump && !collision.bottom && !collision.leftSlider && !collision.rightSlider)
         {
             DashDirection(new Vector2(0, -1));
             dashedDown = true;

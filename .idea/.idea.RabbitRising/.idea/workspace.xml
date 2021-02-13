@@ -4,15 +4,17 @@
     <list default="true" id="acfc8e06-2654-4931-9079-b9bc164cf58e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RabbitRising/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RabbitRising/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RabbitRising/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RabbitRising/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RabbitRising/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RabbitRising/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RabbitRising/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RabbitRising/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SceneManager.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SceneManager.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformSelfDestructive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformSelfDestructive.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformSprintUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformSprintUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/SceneManagerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SceneManagerSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerDash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerDash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerJump.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerWallSlide.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerWallSlide.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/CameraSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/CameraSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/InputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/InputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Platforms/Prototype/Tile_Prototype.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Platforms/Prototype/Tile_Prototype.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +24,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/InputSystem.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformSprintUp.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Systems/InputSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Systems/CameraSystem.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mIQRLmRkixxDrLyjfA2IbhUtVF" />
@@ -36,6 +43,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -43,9 +51,18 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../#Builds/RabbitRising.app/Contents/MacOS/RabbitRising" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../#Builds/RabbitRising.app/Contents/MacOS" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -78,6 +95,11 @@
       <workItem from="1609284220617" duration="2613000" />
       <workItem from="1609945482738" duration="395000" />
       <workItem from="1609946827005" duration="678000" />
+      <workItem from="1613003207578" duration="454000" />
+      <workItem from="1613003718695" duration="77000" />
+      <workItem from="1613003924632" duration="2448000" />
+      <workItem from="1613230512074" duration="693000" />
+      <workItem from="1613245635276" duration="311000" />
     </task>
     <servers />
   </component>
@@ -88,5 +110,9 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

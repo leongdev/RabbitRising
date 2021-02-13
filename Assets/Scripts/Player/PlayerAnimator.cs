@@ -43,11 +43,11 @@ public class PlayerAnimator : MonoBehaviour
             }
             else
             {
-                if (InputSystem.dash)
+                if (InputSystem.Dash)
                 {
                     dashLocker = true;
                 }
-                else if(InputSystem.jump)
+                else if(InputSystem.Jump)
                 {
                     dashDownLocker = true;
                 }

@@ -30,7 +30,7 @@ public class PlatformSelfDestructive : MonoBehaviour
     {
         timer.onTimerFinish.RemoveListener(SelfDestroy);
         timer.onTimerFinish.RemoveListener(SelfDestroy);
-    }
+    } 
 
     void SelfDestroy()
     {

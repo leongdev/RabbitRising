@@ -20,7 +20,7 @@ public class PlayerJump : MonoBehaviour
     /// <param name="checkGround"></param>
     public void OnPlayerJump(bool checkGround, bool checkLeft, bool checkRight)
     {
-        if (InputSystem.jump && checkGround)
+        if (InputSystem.Jump && checkGround)
         {
             Jump();
         }
